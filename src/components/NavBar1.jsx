@@ -7,6 +7,7 @@ import navIcon3 from "../assets/img/nav-icon3.svg";
 import git from "../assets/img/git.svg";
 import { HashLink } from "react-router-hash-link";
 import { BrowserRouter } from "react-router-dom";
+import "./Navbar.css";
 
 const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
