@@ -51,7 +51,7 @@ export const Footer = () => {
             size={12}
             sm={6}
             className="text-center text-sm-end"
-            style={{ marginLeft: "24%" }}
+            style={{ marginLeft: "7%" }}
           >
             {/* <div className="social-icon">
               <a href="#">

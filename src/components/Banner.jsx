@@ -6,6 +6,9 @@ import { useState, useEffect } from "react";
 import "./Banner.css";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
+import { AiOutlineCloudDownload } from "react-icons/ai";
+import Resume_web from "../assets/download/Resume_web.pdf";
+import CallToAction from "./CallToAction";
 const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(0);
@@ -53,7 +56,7 @@ const Banner = () => {
               {({ isVisible }) => (
                 <div
                   className={
-                    isVisible ? "animated__animated animate__fadeIn" : ""
+                    isVisible ? "animate__animated animate__fadeIn" : ""
                   }
                 >
                   <span className="tagline">Welcome to my portfolio</span>
@@ -68,15 +71,33 @@ const Banner = () => {
                     technologies and emerging trends. Always looking for new
                     ways to build interactive user interfaces.
                   </p>
-                  <button onClick={() => console.log("connect")}>
+                  {/* <button onClick={() => console.log("connect")}>
                     Let's Connect <ArrowRightCircle size={25} />
+                  </button> */}
+                  <button
+                    text="Download CV "
+                    icon={<AiOutlineCloudDownload />}
+                    action={() => window.open(Resume_web)}
+                    onClick={() => window.open(Resume_web)}
+                  >
+                    Download CV <ArrowRightCircle size={25} />
                   </button>
                 </div>
               )}
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
-            <img src={headerImg} alt="Header Img" />
+            <TrackVisibility>
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__zoomIn" : ""
+                  }
+                >
+                  <img src={headerImg} alt="Header Img" />
+                </div>
+              )}
+            </TrackVisibility>
           </Col>
         </Row>
       </Container>
